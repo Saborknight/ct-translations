@@ -20,16 +20,16 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'database_name_here');
+define('DB_NAME', 'ct_dev2');
 
 /** MySQL database username */
-define('DB_USER', 'username_here');
+define('DB_USER', 'ct_dev');
 
 /** MySQL database password */
 define('DB_PASSWORD', 'password_here');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', '18fd2.webhost.ee');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -46,34 +46,24 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'Y5gbcG`WdZzuu &c=#!0R+7WE1!I{GKh&3-g-J1*oD3I<~jHC=!tW=-ics:tX:8z');
-define('SECURE_AUTH_KEY',  'hi;C)2+vtEl;C2zMi[Cfz{PD4MfPS~w-&A<j+xQ3_B~:|7%SJ7inaIM.-2+|Z,it');
-define('LOGGED_IN_KEY',    'lC:QZknrxIRz(v//|S=oZ[M9<vn}t7P5-)IJz~yp:jIQ-+N;QpB-qIOf%}$6+8:*');
-define('NONCE_KEY',        'mfH.Ew,os>s.HC9-oH+6T/s1O]OeGE5~V2gsuAR&$d#HUKpWW+^-M-)h6Q4jP ro');
-define('AUTH_SALT',        'J>yAAZYx.i.<lEz%iP$+0(.8x#+-9`|-t)Ic(egGfp&QZk<+-[k0<C|=kLhM`T*v');
-define('SECURE_AUTH_SALT', 'H:ccAeE<W}HxPA:P*/zVo(5y+{3oEpaRXc(92LQ65B1^>^=@(+i),oGPe}djnsu@');
-define('LOGGED_IN_SALT',   'S&0O<9oHwk05Kem<$kXX-70s!FRTLS/}1D0}IC-|9y?#I9Nrr%@_`(yviOL|[oyk');
-define('NONCE_SALT',       'Zy|,gW$K9L*Feuf*x GW*d@loEC|>j+_gQKs[7I,uFGL[zf>M:=QnDwU@D9>|6t:');
+define('AUTH_KEY',         'd5Bq%Nd^&4l?e&|qE]se;n7=At<cFR;!m%}V$x -j+-(Tm3*S%e-Ejo UL0V25[h');
+define('SECURE_AUTH_KEY',  'I@s;&#km,4|1_#*red?}svr}Ure$i2*75nFD4CyxHFqnv,zjdf|P8p$8}SV**w@q');
+define('LOGGED_IN_KEY',    '|YdX2M]SBekdWp`0qWp.(Pxt%58Brs]a]zcA4V14e6v!*9LgIe# jOjjV?UHnP=u');
+define('NONCE_KEY',        'h6c@@}pB>9`Olb1y xa/LvM}Sy:%5S_O+# =**lO-dL}-Sl8m+Qm/u$w;|wt%?;}');
+define('AUTH_SALT',        '{z|S,hTMA>A-Ya:geKFoUV4f-zO^u|j!c{[uO&u-|yeRw,*+-@|~QEV@4c&?K!9(');
+define('SECURE_AUTH_SALT', 'bz7Od,ZOk89=S^ 73Z;2@.[gyp}j]y@gP+8o2go%?*dY++ECw x3d&:;Qum}*JL.');
+define('LOGGED_IN_SALT',   'QgOD?}MF?XN7;rWCUlSKC!rhBb;?fNDKIh0h|t[[jZHxt@=+^^bjF I+| 2HMrt_');
+define('NONCE_SALT',       '4fS%o.vpkjUm9@O?+i%A#}ceR R5Ewt2(J|jk%w4O-.ZF`WzhOEkOFaS%G:PMN$,');
 
 /**#@-*/
 
 /**
  * WordPress Database Table prefix.
  *
- * You can have multiple installations in one database if you give each a unique
- * prefix. Only numbers, letters, and underscores please!
+ * You can have multiple installations in one database if you give each
+ * a unique prefix. Only numbers, letters, and underscores please!
  */
 $table_prefix  = 'ct_';
-
-/**
- * WordPress Localized Language, defaults to English.
- *
- * Change this to localize WordPress. A corresponding MO file for the chosen
- * language must be installed to wp-content/languages. For example, install
- * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
- * language support.
- */
-define('WPLANG', 'et');
 
 /**
  * For developers: WordPress debugging mode.
@@ -81,23 +71,13 @@ define('WPLANG', 'et');
  * Change this to true to enable the display of notices during development.
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
+ *
+ * For information on other constants that can be used for debugging,
+ * visit the Codex.
+ *
+ * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', false);
-
-/* Multisite */
-define( 'WP_ALLOW_MULTISITE', true );
-
-define('MULTISITE', true);
-define('SUBDOMAIN_INSTALL', false);
-define('DOMAIN_CURRENT_SITE', 'ct.avocado.dev');
-define('PATH_CURRENT_SITE', '/');
-define('SITE_ID_CURRENT_SITE', 1);
-define('BLOG_ID_CURRENT_SITE', 1);
-
-// Source: https://premium.wpmudev.org/blog/move-multisite-new-domain/
-
-define('WP_HOME','http://ct.avocado.dev');
-define('WP_SITEURL','http://ct.avocado.dev');
 
 /* That's all, stop editing! Happy blogging. */
 
