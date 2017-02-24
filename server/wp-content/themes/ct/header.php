@@ -23,7 +23,7 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/normalize.css">
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/animate.min.css">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.min.css">
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
         <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
 
