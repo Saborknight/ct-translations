@@ -41,7 +41,7 @@ function ct_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'ct_wp_title', 10, 2 );
 
-function call_to_action_buttons() {
+function ct_call_to_action_buttons() {
 	printf('
 		<div id="content_btns">
 			<ul>
@@ -74,4 +74,111 @@ function call_to_action_buttons() {
 	);
 }
 add_action('call_to_action_buttons', 'call_to_action_buttons');
+
+function ct_options_init() {
+	// Create Setting
+	$settings_group = 'ct_custom_settings';
+	$setting_name = 'ct_phone_primary';
+	register_setting( $settings_group, $setting_name );
+
+	// Create section of Page
+	$settings_section = 'contact_details';
+	$page = $settings_group;
+	add_settings_section(
+		$settings_section,
+		__('CT Contact Details', 'ct-settings-page', 'ct'),
+		'Some text?',
+		$page
+	);
+
+	// Add fields to that section
+	add_settings_field(
+		$section_name,
+		__('Primary Phone Number', 'ct-settings-page'),
+		'settings_constructor',
+		$page,
+		$settings_section
+	);
+}
+
+function ct_options_menu() {
+	add_options_page(
+		__('CT Custom Settings', 'custom-settings-page', 'ct'),
+		__('CT Settings', 'custom-settings-page', 'ct'),
+		'manage_options',
+		'ct-custom-settings-page',
+		'ct_options_page_constructor'
+	);
+}
+
+function ct_options_page_constructor() {
+	if(!current_user_can('manage_options')) {
+		wp_die(_x('You do not have sufficient permissions to access this page.', 'status-messages', 'ct'));
+	}
+
+	get_template_part('page-templates/settings', 'main');
+}
+
+function ct_options_section_contructor() {
+	echo '<div>Section</div>';
+}
+
+function ct_options_field_constructor() {
+	$option = '<p>Yo</p>';
+	echo $option;
+}
+add_action('admin_menu', 'ct_options_menu');
+add_action('admin_init', 'ct_options_init');
+
+update_option(
+	'ct_phone_primary',
+	array(
+		'country_code' => '353',
+		'country' => 'Ireland',
+		'number' => '86 394 6391'
+	)
+);
+
+// function ct_options_page() {
+// 	add_options_page(
+// 		__('CT Custom Settings', 'custom-settings-page', 'ct'),
+// 		__('CT Settings', 'custom-settings-page', 'ct'),
+// 		'manage_options',
+// 		'ct-custom-settings-page',
+// 		'ct_options_page_contructor'
+// 	);
+// }
+
+// function ct_options_page_init() {
+// 	register_setting('ct-contact-details', 'phone-number');
+// 	add_settings_section('ct-contact-details', _x('CT Contact Details', 'custom-settings-page', 'ct'), '', 'ct-custom-settings-page');
+// 	add_settings_field('ct-contact-details', _x('Primary Phone Number', 'custom-settings-page', 'ct'), '', 'ct-custom-settings-page');
+// }
+
+// function ct_options_page_contructor() {
+// 	if(!current_user_can('manage_options')) {
+// 		wp_die(_x('You do not have sufficient permissions to access this page.', 'status-messages', 'ct'));
+// 	}
+
+// 	settings_fields('ct-contact-details');
+
+// 	printf(
+// 		'<div class="wrap">
+// 			<h1>%s</h1>
+// 			<form method="POST" action="options.php">
+// 				%s
+// 				%s
+// 			</form>
+// 		</div>',
+// 		__('CT Custom Settings', 'custom-settings-page', 'ct'),
+// 		do_settings_sections('ct-contact-details'),
+// 		submit_button()
+// 	);
+// }
+// add_action('admin_menu', 'ct_options_page');
+// add_action('admin_init', 'ct_options_page_init');
+
+// function ct_field_renderer() {
+// 	echo '<input type="number" name="ct_phone_primary_number" value="' . get_option('ct_phone_primary', '')['number'] . '">';
+// }
 ?>

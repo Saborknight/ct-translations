@@ -43,8 +43,13 @@
 				
 				<div id="phone">
 					<div id="phone_icon"></div>
-					<div id="phone_number">	
-						<div id="region_code">(+372)</div><span>53464931</span>
+					<div id="phone_number">
+						<?php
+							$number = get_option('ct_phone_primary');
+							// Number: (+353) 86 394 6391
+							// var_dump($number);
+							printf('<span id="region_code">(+%s)</span> <span>%s</span>', $number['country_code'], $number['number']);
+						?>
 					</div>
 				</div>
 				
