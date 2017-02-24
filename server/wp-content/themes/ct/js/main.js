@@ -1,31 +1,31 @@
 var interval_logos;
 
-$(window).load(function(){
+jQuery(window).load(function($){
 
-	setInterval(ChangeBg, 3000);
+	setInterval(ChangeBg(), 3000);
 
 });
 
-$(document).ready(function() {
+jQuery(document).ready(function($) {
 
 	$('#language ul li.active').on("click", function() {
-					if (!$(this).hasClass("open")){
-						$(this).addClass("open");
-						$("#language ul").children().each(function() {
-							if(!$(this).hasClass("active")){
-								$(this).slideToggle(150);
-							}
-						});
-					}
-					else {
-						$(this).removeClass("open");
-						$("#language ul").children().each(function() {
-							if(!$(this).hasClass("active")){
-								$(this).slideToggle(150);
-							}
-						});
-					}
-					return false;		
+		if (!$(this).hasClass("open")){
+			$(this).addClass("open");
+			$("#language ul").children().each(function() {
+				if(!$(this).hasClass("active")){
+					$(this).slideToggle(150);
+				}
+			});
+		}
+		else {
+			$(this).removeClass("open");
+			$("#language ul").children().each(function() {
+				if(!$(this).hasClass("active")){
+					$(this).slideToggle(150);
+				}
+			});
+		}
+		return false;		
 	});
 
 	var totalwidth = $(window).width();
@@ -107,27 +107,30 @@ $(document).ready(function() {
     });
 });
 
-function ChangeBg(){
-			$current = $('#backgrounds').find('.active');
-			$first = $('#backgrounds').children('.bg').first();
-			$next = $current.next();
+function ChangeBg($){
+	(function($) {
+		$current = $('#backgrounds').find('.active');
+		$first = $('#backgrounds').children('.bg').first();
+		$next = $current.next();
 
-			$ID = $current.attr('id').substr(11);
+		$ID = $current.attr('id').substr(11);
 
+		if($next.length != 0) {
+			$next.addClass('active').css('z-index', Number($ID)-1);
+		} else {
+			$first.addClass('active').css('z-index', Number($ID)-1);
+		}
+
+		$current.css('z-index', $ID).addClass('fadeOut').delay(2500).queue(function(next){
+			$(this).removeClass('fadeOut active');
+			
 			if($next.length != 0) {
-				$next.addClass('active').css('z-index', Number($ID)-1);
+				$next.removeAttr('z-index');
 			} else {
-				$first.addClass('active').css('z-index', Number($ID)-1);
+				$first.removeAttr('z-index');
 			}
-
-			$current.css('z-index', $ID).addClass('fadeOut').delay(2500).queue(function(next){
-				$(this).removeClass('fadeOut active');
-				
-				if($next.length != 0) {
-					$next.removeAttr('z-index');
-				} else {
-					$first.removeAttr('z-index');
-				}
 			next();
-			});
+		});
+
+	})(jQuery);
 }
