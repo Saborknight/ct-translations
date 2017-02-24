@@ -1,12 +1,12 @@
 <?php
 /**
- * Template Name: Avaleht
+ * This page will be acting as the homepage for each language
  *
  * @package WordPress
  * @subpackage CT
- * @since CT 1.0
+ * @since 2.0.0
+ * @author Saborknight
  */
-
 get_header(); ?>
 
 	<div id="content">
@@ -17,7 +17,7 @@ get_header(); ?>
 		</div>
 		<div class="container">
 			<span id="title">&nbsp;</span>
-			 <?php do_action('call_to_action_buttons'); ?>
+			<?php do_action('call_to_action_buttons'); ?>
 		</div>
 	</div>
 

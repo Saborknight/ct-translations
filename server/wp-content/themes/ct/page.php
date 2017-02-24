@@ -19,13 +19,7 @@ get_header(); ?>
 
 	<div id="content" class="notindex">
 		<div class="container">
-				<div id="content_btns">
-					<ul>
-						<li><a href="<?php echo get_home_url(); ?>/teenused"><span class="btn_text">vaata teenuseid</span><div class="content_btn_arrow"></div></a></li>
-						<li><a href="<?php echo get_home_url(); ?>/hinnaparing" class="orange"><span class="btn_text">küsi pakkumist</span><div class="content_btn_arrow"></div></a></li>
-						<li><a href="<?php echo get_home_url(); ?>/tagasiside"><span class="btn_text">loe arvamusi</span><div class="content_btn_arrow"></div></a></li>
-					</ul>
-				</div>
+			<?php do_action('call_to_action_buttons'); ?>
 		</div>
 	</div>
 
