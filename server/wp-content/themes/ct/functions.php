@@ -101,6 +101,40 @@ function ct_call_to_action_buttons() {
 }
 add_action('ct_call_to_action_buttons', 'ct_call_to_action_buttons');
 
+/**
+ * Generate language switch dropdown
+ * If the language is current, take it to the top of the list (and therefore the opening button for the dropdown)
+ *
+ * @since 2.0.0
+ *
+ * @return Structured language dropdown.
+ */
+function ct_language_dropdown_list_dropdown(){
+	$languages = icl_get_languages('skip_missing=0');
+	if(!empty($languages)){
+		foreach($languages as $l){
+			$item = sprintf(
+				'<li %s><a href="%s"><img class="lang_icon" src="%s" alt="%s flag" />%s%s</a></li>',
+				$l['active'] ? 'class="active"' : null,
+				$l['url'],
+				$l['country_flag_url'],
+				$l['translated_name'],
+				$l['language_code'],
+				$l['active'] ? '<div id="arrow"></div>' : null
+			);
+
+			if($l['active'] && isset($language_items)) {
+				array_unshift($language_items, $item);
+			} else {
+				$language_items[] = $item;
+			}
+		}
+
+		printf('<div id="language"><ul>%s</ul></div>', implode("\n", $language_items));
+	}
+}
+add_action('ct_language_dropdown', 'ct_language_dropdown_list_dropdown');
+
 function ct_options_init() {
 	// Create Setting
 	$settings_group = 'ct_custom_settings';
