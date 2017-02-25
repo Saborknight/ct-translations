@@ -1,80 +1,80 @@
 /*
 Theme Name: CT
-Author: Pearu
-Author URI: http://www.algus.ee
+Author: Pearu, Saborknight, Kristo(Avocado)
+Author URI: http://www.algus.ee, http://saborknight.com, http://avocado.ee
 Description: The CT theme is a custom made great looking theme which works well on all devices.
-Version: 1.0
+Version: 2.0
 Text Domain: ct
 */
 
 /* FONTS */
 @font-face {
-    font-family: 'exomedium';
-    src: url('fonts/exo-medium-webfont.eot');
-    src: url('fonts/exo-medium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/exo-medium-webfont.woff') format('woff'),
-         url('fonts/exo-medium-webfont.ttf') format('truetype'),
-         url('fonts/exo-medium-webfont.svg#exomedium') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'exomedium';
+	src: url('fonts/exo-medium-webfont.eot');
+	src: url('fonts/exo-medium-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/exo-medium-webfont.woff') format('woff'),
+		 url('fonts/exo-medium-webfont.ttf') format('truetype'),
+		 url('fonts/exo-medium-webfont.svg#exomedium') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 @font-face {
-    font-family: 'exolight';
-    src: url('fonts/exo-light-webfont.eot');
-    src: url('fonts/exo-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/exo-light-webfont.woff') format('woff'),
-         url('fonts/exo-light-webfont.ttf') format('truetype'),
-         url('fonts/exo-light-webfont.svg#exolight') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'exolight';
+	src: url('fonts/exo-light-webfont.eot');
+	src: url('fonts/exo-light-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/exo-light-webfont.woff') format('woff'),
+		 url('fonts/exo-light-webfont.ttf') format('truetype'),
+		 url('fonts/exo-light-webfont.svg#exolight') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 @font-face {
-    font-family: 'MarketRegular';
-    src: url('fonts/market.eot');
-    src: url('fonts/market.eot') format('embedded-opentype'),
-         url('fonts/market.woff') format('woff'),
-         url('fonts/market.ttf') format('truetype'),
-         url('fonts/market.svg#MarketRegular') format('svg');
+	font-family: 'MarketRegular';
+	src: url('fonts/market.eot');
+	src: url('fonts/market.eot') format('embedded-opentype'),
+		 url('fonts/market.woff') format('woff'),
+		 url('fonts/market.ttf') format('truetype'),
+		 url('fonts/market.svg#MarketRegular') format('svg');
 }
 @font-face {
-    font-family: 'exoregular';
-    src: url('fonts/exo-webfont.eot');
-    src: url('fonts/exo-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/exo-webfont.woff') format('woff'),
-         url('fonts/exo-webfont.ttf') format('truetype'),
-         url('fonts/exo-webfont.svg#exoregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'exoregular';
+	src: url('fonts/exo-webfont.eot');
+	src: url('fonts/exo-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/exo-webfont.woff') format('woff'),
+		 url('fonts/exo-webfont.ttf') format('truetype'),
+		 url('fonts/exo-webfont.svg#exoregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 @font-face {
-    font-family: 'exobold';
-    src: url('fonts/exo-bold-webfont.eot');
-    src: url('fonts/exo-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/exo-bold-webfont.woff') format('woff'),
-         url('fonts/exo-bold-webfont.ttf') format('truetype'),
-         url('fonts/exo-bold-webfont.svg#exobold') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'exobold';
+	src: url('fonts/exo-bold-webfont.eot');
+	src: url('fonts/exo-bold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/exo-bold-webfont.woff') format('woff'),
+		 url('fonts/exo-bold-webfont.ttf') format('truetype'),
+		 url('fonts/exo-bold-webfont.svg#exobold') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 @font-face {
-    font-family: 'exodemi_bold';
-    src: url('fonts/exo-demibold-webfont.eot');
-    src: url('fonts/exo-demibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/exo-demibold-webfont.woff') format('woff'),
-         url('fonts/exo-demibold-webfont.ttf') format('truetype'),
-         url('fonts/exo-demibold-webfont.svg#exodemi_bold') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'exodemi_bold';
+	src: url('fonts/exo-demibold-webfont.eot');
+	src: url('fonts/exo-demibold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/exo-demibold-webfont.woff') format('woff'),
+		 url('fonts/exo-demibold-webfont.ttf') format('truetype'),
+		 url('fonts/exo-demibold-webfont.svg#exodemi_bold') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 @font-face {
-    font-family: 'exoextra_light';
-    src: url('fonts/exo-extralight-webfont.eot');
-    src: url('fonts/exo-extralight-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/exo-extralight-webfont.woff') format('woff'),
-         url('fonts/exo-extralight-webfont.ttf') format('truetype'),
-         url('fonts/exo-extralight-webfont.svg#exoextra_light') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'exoextra_light';
+	src: url('fonts/exo-extralight-webfont.eot');
+	src: url('fonts/exo-extralight-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/exo-extralight-webfont.woff') format('woff'),
+		 url('fonts/exo-extralight-webfont.ttf') format('truetype'),
+		 url('fonts/exo-extralight-webfont.svg#exoextra_light') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
 body{
@@ -102,7 +102,7 @@ a {
 #top {
 	float: left;
 	width: 100%;
-	border-top: 8px solid #FF3D00;
+	border-top: 8px solid #FF0200;
 	padding: 31px 0px;
 }
 #logo{
@@ -113,10 +113,10 @@ a {
 	margin-left: 150px;
 }
 #phone{
-	float: left;
+	float: right;
 	width: 230px;
 	height: 42px;
-	margin: 14px 0 0 54px;
+	margin: 14px 300px 0 54px;
 }
 #phone_icon {
 	float: left;
@@ -127,19 +127,19 @@ a {
 #phone_number{
 	float: left;
 	font-family: exomedium, Arial, sans-serif;
-	font-size: 20px;
+	font-size: 19px;
 	line-height: 20px;
 	color: #555d6a;
-	padding: 12px 0px 0px 18px;
+	padding: 12px 0px 0px 12px;
 	border-radius: 194px / 36px;
 	box-shadow: 12px 32px 9px -13px rgba(0, 0, 0, .1);
 }
 #region_code{
 	float: left;
 	font-family: exolight, Arial, sans-serif;
-	font-size: 20px;
+	/*font-size: 20px;
 	line-height: 20px;
-	color: #555d6a;
+	color: #555d6a;*/
 }
 #language{
 	position: absolute;
@@ -406,13 +406,13 @@ textarea:-ms-input-placeholder{
 	color: #555d6a;
 }
 input::-webkit-input-placeholder { /* WebKit browsers */
-    color: #555d6a;
+	color: #555d6a;
 }
 input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color: #555d6a;
+	color: #555d6a;
 }
 input:-ms-input-placeholder { /* Internet Explorer 10+ */
-    color: #555d6a;
+	color: #555d6a;
 }
 #submit_area{
 	float: left;
@@ -715,12 +715,17 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 }
 
 /* -- BOTTOM -- */
-#bottom {
+#bottom{
 	float: left;
 	width: 100%;
-	background: #FF3D00 url(img/bottom_bg.png) no-repeat top right;
+	background: #FF0200 url(img/bottom_bg.png) no-repeat top right;
 	box-shadow: inset 0px 18px 20px -13px rgba(0,0,0,.2);
 	padding: 48px 0 114px 0;
+}
+#bottom_text{
+	font-family: exomedium, Arial, sans-serif;
+	font-size: 12px;
+	line-height: 1.6;
 }
 #table{
 	display: table;
@@ -760,7 +765,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 	display: table-row;
 	font-family: exobold, Arial, sans-serif;
 	font-size: 18px;
-	line-height: 18px;
+	line-height: 1.6;
 	float: left;
 	width: 210px;
 }
