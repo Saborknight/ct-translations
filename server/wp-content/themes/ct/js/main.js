@@ -95,8 +95,7 @@ jQuery(document).ready(function($) {
 		if($(this).hasClass('open')){
 			$('.menu ul').slideUp(500);
 			$(this).removeClass('open');
-		}
-		else{
+		} else {
 			$('.menu ul').slideDown(500);
 			$(this).addClass('open');
 		}

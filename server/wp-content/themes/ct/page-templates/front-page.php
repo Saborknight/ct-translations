@@ -17,7 +17,7 @@ get_header(); ?>
 		</div>
 		<div class="container">
 			<span id="title">&nbsp;</span>
-			 <?php do_action('call_to_action_buttons'); ?>
+			 <?php do_action('ct_call_to_action_buttons'); ?>
 		</div>
 	</div>
 

@@ -73,7 +73,7 @@ function ct_call_to_action_buttons() {
 		get_permalink(icl_object_id(17, 'page'))
 	);
 }
-add_action('call_to_action_buttons', 'call_to_action_buttons');
+add_action('ct_call_to_action_buttons', 'ct_call_to_action_buttons');
 
 function ct_options_init() {
 	// Create Setting

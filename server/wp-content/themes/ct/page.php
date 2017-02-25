@@ -19,7 +19,7 @@ get_header(); ?>
 
 	<div id="content" class="notindex">
 		<div class="container">
-			<?php do_action('call_to_action_buttons'); ?>
+			<?php do_action('ct_call_to_action_buttons'); ?>
 		</div>
 	</div>
 
