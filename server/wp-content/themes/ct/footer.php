@@ -12,7 +12,7 @@
 	<div id="clients">
 		
 		<div class="clients_line"></div>
-		<span id="clients_header">kliendid</span>
+		<span id="clients_header"><?php _e('clients', 'ct'); ?></span>
 		<div class="clients_line"></div>
 		<div id="clients_area">
 			<div class="clients_btn left"></div>
@@ -49,7 +49,12 @@
 		<div id="bottom">
 			<div class="container">
 				<div id="table">
-					<div id="bottom_left">Kontakt</div>
+					<div id="bottom_left">
+						<?php
+							/* translators: Title for the footer section displaying the contact information */
+							_e('Contact', 'ct');
+						?>
+					</div>
 							
 					<div id="bottom_center">	
 						<div id="round_logo"></div>
@@ -62,11 +67,11 @@
 							Telefon (+372) 5346 4931 (Eesti)<br/>
 							(+353) 86 394 6391 (Iirimaa)<br/>
 							E-post: <a id="mail" href="mailto:ct@ct.ee">ct@ct.ee</a><br/>
-							www.ct.ee		
+							www.ct.ee
 						</span>
 					</div>
 				</div>
-				<div id="copyright" class="bottom_text">copyright &copy; correct translations oü 2004-2013</div>
+				<div id="copyright" class="bottom_text"><?php printf( _x('copyright &copy; correct translations oü %s', 'copyright-statement', 'ct'), '2004-' . date('Y')); ?></div>
 				<div id="bottom_button"></div>
 			</div>
 		</div>

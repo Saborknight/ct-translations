@@ -15,7 +15,7 @@ get_header(); ?>
 				<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
-					<h1 class="page-title"><?php printf( __( 'Otsingutulemused fraasist: %s', 'ct' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+					<h1 class="page-title"><?php printf( __( 'Search phrase: %s', 'ct' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				</header>
 
 				<?php /* Start the Loop */ ?>
@@ -27,11 +27,11 @@ get_header(); ?>
 
 				<article id="post-0" class="post no-results not-found">
 					<header class="entry-header">
-						<h1 class="entry-title"><?php _e( 'Tulemusi ei leitud', 'ct' ); ?></h1>
+						<h1 class="entry-title"><?php _e( 'No results found', 'ct' ); ?></h1>
 					</header>
 
 					<div class="entry-content">
-						<p><?php _e( 'Kahjuks ei leitud teie otsingule vastavaid tulemusi.', 'ct' ); ?></p>
+						<p><?php _e( 'Unfortunately, no results were found.', 'ct' ); ?></p>
 					</div><!-- .entry-content -->
 				</article><!-- #post-0 -->
 
@@ -42,13 +42,7 @@ get_header(); ?>
 
 	<div id="content" class="notindex">
 		<div class="container">
-				<div id="content_btns">
-					<ul>
-						<li><a href="#"><span class="btn_text">vaata teenuseid</span><div class="content_btn_arrow"></div></a></li>
-						<li><a href="#" class="orange"><span class="btn_text">küsi pakkumist</span><div class="content_btn_arrow"></div></a></li>
-						<li><a href="#"><span class="btn_text">loe arvamusi</span><div class="content_btn_arrow"></div></a></li>
-					</ul>
-				</div>
+			<?php do_action('ct_call_to_action_buttons'); ?>
 		</div>
 	</div>
 

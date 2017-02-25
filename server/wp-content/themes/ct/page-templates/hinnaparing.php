@@ -19,7 +19,7 @@ get_header(); ?>
 if(isset($_POST['submit'])) {
 	
 	$email_to = "ct@ct.ee";
-	$email_subject = _x('Hinnapäring ', 'form-sent-message', 'ct') . $_POST['name'];
+	$email_subject = _x('Request for a quote ', 'form-sent-message', 'ct') . $_POST['name'];
 
 
 	function died($error) {
@@ -97,14 +97,14 @@ if(isset($_POST['submit'])) {
 		return str_replace($bad,"",$string);
 	}
 	
-	$email_message .= _x('Nimi: ', 'form-message-fields', 'ct') . clean_string($name) . "\n";
+	$email_message .= _x('Name: ', 'form-message-fields', 'ct') . clean_string($name) . "\n";
 	$email_message .= _x('Email: ', 'form-message-fields', 'ct') . clean_string($email_from) . "\n";
-	$email_message .= _x('Telefon: ', 'form-message-fields', 'ct') . clean_string($telephone) . "\n";
-	$email_message .= _x('Riik: ', 'form-message-fields', 'ct') . clean_string($country) . "\n";
-	$email_message .= _x('Lähtekeel: ', 'form-message-fields', 'ct') . clean_string($language_from) . "\n";
-	$email_message .= _x('Sihtkeel: ', 'form-message-fields', 'ct') . clean_string($language_to) . "\n";
-	$email_message .= _x('Tähtaeg: ', 'form-message-fields', 'ct') . clean_string($deadline) . "\n";
-	$email_message .= _x('Kirjeldus: ', 'form-message-fields', 'ct') . clean_string($description) . "\n";
+	$email_message .= _x('Phone number: ', 'form-message-fields', 'ct') . clean_string($telephone) . "\n";
+	$email_message .= _x('Country: ', 'form-message-fields', 'ct') . clean_string($country) . "\n";
+	$email_message .= _x('Source language: ', 'form-message-fields', 'ct') . clean_string($language_from) . "\n";
+	$email_message .= _x('Target language: ', 'form-message-fields', 'ct') . clean_string($language_to) . "\n";
+	$email_message .= _x('Deadline: ', 'form-message-fields', 'ct') . clean_string($deadline) . "\n";
+	$email_message .= _x('Description: ', 'form-message-fields', 'ct') . clean_string($description) . "\n";
 
 	$header = sprintf('From: %s www.ct.ee <ct@ct.ee>', __('Price enquiry page'));
 	 
@@ -132,7 +132,7 @@ if(isset($_POST['submit'])) {
 					<input type="file" class="price_request files" name="files[]" multiple>
 					<div id="submit_area">
 						<div id="submit_btn">
-							<input name="submit" type="submit" value="SAADA" class="submit">
+							<input name="submit" type="submit" value="<?php _ex('SEND', 'form-submit', 'ct'); ?>" class="submit">
 						</div>
 					</div>
 				</form>

@@ -8,6 +8,23 @@
  * @since CT 1.0
  */
 
+function ct_init() {
+	update_option(
+		'ct_phone_primary',
+		array(
+			'country_code' => '353',
+			'country' => 'Ireland',
+			'number' => '86 394 6391'
+		)
+	);
+
+	update_option(
+		'ct_company_details',
+		array(
+			'name' => 'Correct Translations Ltd.',
+		)
+	);
+}
 
 /**
  * Creates a nicely formatted and more specific title element text
@@ -40,6 +57,15 @@ function ct_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'ct_wp_title', 10, 2 );
+
+/**
+ * Centralised structure of the Call to Actions panel just above the footer.
+ * To be called on a page between a `<div class="container"></div>` wrapper.
+ *
+ * @since 2.0.0
+ *
+ * @return Structured call to action panel.
+ */
 
 function ct_call_to_action_buttons() {
 	printf('
@@ -129,15 +155,6 @@ function ct_options_field_constructor() {
 }
 add_action('admin_menu', 'ct_options_menu');
 add_action('admin_init', 'ct_options_init');
-
-update_option(
-	'ct_phone_primary',
-	array(
-		'country_code' => '353',
-		'country' => 'Ireland',
-		'number' => '86 394 6391'
-	)
-);
 
 // function ct_options_page() {
 // 	add_options_page(
