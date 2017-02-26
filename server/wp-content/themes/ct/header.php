@@ -61,7 +61,7 @@
 				<?php wp_nav_menu( array('container' => 'div', 'container_class' => 'menu', 'menu_class' => '') ); ?>
 
 				<form id="search" role="search" method="get" action="<?php echo home_url( '/' ); ?>">
-					<input type="text" id="search-input" name="s" onfocus="if(this.value=='Otsi kodulehelt')this.value=''" onblur="if(this.value=='')this.value='Otsi kodulehelt'" value="<?php _e('Search site', 'ct'); ?>" />
+					<input type="text" id="search-input" name="s" value="" placeholder="<?php _e('Search site', 'ct'); ?>" />
 					<input type="submit" id="search-btn" value="" />
 				</form>
 			

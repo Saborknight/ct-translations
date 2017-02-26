@@ -222,7 +222,6 @@ a {
 }
 .menu{
 	float: left;
-	margin-left: 34px;
 }
 .menu ul {
 	float: left;
@@ -259,7 +258,8 @@ a {
 /* SEARCH */
 #search {
 	float: right;
-	margin: 6px 34px 0 0;
+	margin-top: 6px;
+	margin-bottom: 0;
 }		
 #search-input {
 	float: left;
