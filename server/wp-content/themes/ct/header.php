@@ -45,8 +45,8 @@
 					<div id="phone_icon"></div>
 					<div id="phone_number">
 						<?php
-							$number = get_option('ct_phone_primary');
-							printf('<span id="region_code">(+%s)</span><span>%s</span>', $number['country_code'], $number['number']);
+							$phone = get_option('ct_phone_primary');
+							printf('<span id="region_code">(+%s)</span><span>%s</span>', $phone['country_code'], str_replace(' ', '', $phone['number']));
 						?>
 					</div>
 				</div>

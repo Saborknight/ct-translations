@@ -51,7 +51,16 @@ function ct_init() {
 		array(
 			'country_code' => '353',
 			'country' => 'Ireland',
-			'number' => '863946391'
+			'number' => '86 394 6391'
+		)
+	);
+
+	update_option(
+		'ct_phone_secondary',
+		array(
+			'country_code' => '372',
+			'country' => 'Estonia',
+			'number' => '5346 4931'
 		)
 	);
 
@@ -59,6 +68,9 @@ function ct_init() {
 		'ct_company_details',
 		array(
 			'name' => 'Correct Translations',
+			'type' => 'Ltd.',
+			'email' => 'ct@ct.ee',
+			'website' => 'www.ct.ee'
 		)
 	);
 }

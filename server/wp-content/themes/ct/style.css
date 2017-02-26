@@ -736,7 +736,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 #bottom_left{
 	display: table-row;
 	float: left;
-	width: 210px;
+	width: 300px;
 	text-align: right;
 	font-family: exoextra_light, Arial, sans-serif;
 	font-size: 42px;
@@ -762,17 +762,25 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 }
 #bottom_right{
 	display: table-row;
-	font-family: exobold, Arial, sans-serif;
-	font-size: 18px;
 	line-height: 1.6;
 	float: left;
-	width: 210px;
+	width: 300px;
+}
+.bottom_header{
+	font-family: exobold, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: 100;
+	margin: 0;
 }
 .bottom_text{
 	font-family: exomedium, Arial, sans-serif;
 	font-size: 12px;
-	line-height: 12px;
 }
+.bottom_text a{
+	text-decoration: none;
+	color: white;
+}
+
 #copyright{
 	width: 300px;
 	text-transform: uppercase;
@@ -790,11 +798,6 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 #bottom_button:hover{
 	cursor: pointer;
 }
-#mail{
-	text-decoration: none;
-	color: white;
-}
-
 /* -- MEDIA QUERIES --*/
 @media only screen and (max-width: 1280px) {
 	#logo {
