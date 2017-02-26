@@ -8,6 +8,17 @@
  * @subpackage CT
  * @since CT 1.0
  */
+$directory = get_template_directory() . '/img/clients/';
+$clients = glob($directory . "*.{jpg,png,gif}", GLOB_BRACE);
+if($clients) {
+	$filecount = 0;
+	foreach($clients as $logo) {
+		++$filecount;
+		$client_items[] = sprintf('<li class="clients%d"></li>', $filecount);
+	}
+
+	$wrapper_width = $filecount * 200;
+}
 ?>
 	<div id="clients">
 		
@@ -17,29 +28,8 @@
 		<div id="clients_area">
 			<div class="clients_btn left"></div>
 			<div id="clients_scrollable">
-					<ul>
-						<li class="clients1"><a href="#"></a></li>
-						<li class="clients2"><a href="#"></a></li>
-						<li class="clients3"><a href="#"></a></li>
-						<li class="clients4"><a href="#"></a></li>
-						<li class="clients5"><a href="#"></a></li>
-						<li class="clients6"><a href="#"></a></li>
-						<li class="clients7"><a href="#"></a></li>
-						<li class="clients8"><a href="#"></a></li>
-						<li class="clients9"><a href="#"></a></li>
-						<li class="clients10"><a href="#"></a></li>
-						<li class="clients11"><a href="#"></a></li>
-						<li class="clients12"><a href="#"></a></li>
-						<li class="clients13"><a href="#"></a></li>
-						<li class="clients14"><a href="#"></a></li>
-						<li class="clients15"><a href="#"></a></li>
-						<li class="clients16"><a href="#"></a></li>
-						<li class="clients17"><a href="#"></a></li>
-						<li class="clients18"><a href="#"></a></li>
-						<li class="clients19"><a href="#"></a></li>
-						<li class="clients20"><a href="#"></a></li>
-						<li class="clients21"><a href="#"></a></li>
-						<li class="clients22"><a href="#"></a></li>
+					<ul style="width: <?php echo $wrapper_width; ?>px">
+						<?php echo implode("\n", $client_items); ?>
 					</ul>
 				</div>
 			<div class="clients_btn right"></div>

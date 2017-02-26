@@ -638,7 +638,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 #clients_scrollable ul{
 	float: left;
 	list-style: none;
-	width: 4400px;
+	width: 6400px;
 	overflow-x: hidden;
 }
 #clients_scrollable ul li{
@@ -711,6 +711,30 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 }
 .clients22{
 	background: url(img/clients/c22.png);
+}
+.clients23{
+	background: url(img/clients/c23.png);
+}
+.clients24{
+	background: url(img/clients/c24.png);
+}
+.clients25{
+	background: url(img/clients/c25.png);
+}
+.clients26{
+	background: url(img/clients/c26.png);
+}
+.clients27{
+	background: url(img/clients/c27.png);
+}
+.clients28{
+	background: url(img/clients/c28.png);
+}
+.clients29{
+	background: url(img/clients/c29.png);
+}
+.clients30{
+	background: url(img/clients/c30.png);
 }
 
 /* -- BOTTOM -- */
