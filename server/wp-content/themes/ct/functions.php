@@ -8,20 +8,57 @@
  * @since CT 1.0
  */
 
+/**
+ * Theme setup for all the nice features of WordPress to be enabled!
+ *
+ * @since 2.0.0
+ *
+ * @return nothing
+ */
+function ct_setup() {
+	// Make theme available for translation
+	load_theme_textdomain('ct');
+
+	// This is for RSS links to be managed by WordPress for posts and such
+	add_theme_support('automatic-feed-links');
+
+	// Register menus for editing
+	register_nav_menus(array(
+		'main' => __('Main Menu', 'ct'),
+	));
+
+	// Make default WP markup HTML5!
+	add_theme_support('html5', array(
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
+	));
+}
+add_action('after_setup_theme', 'ct_setup');
+
+/**
+ * Setup init options into the database if this is the first time the
+ * theme has been activated. This is sort of like a quick setup for CT.
+ *
+ * @since 2.0.0
+ *
+ * @return nothing
+ */
 function ct_init() {
 	update_option(
 		'ct_phone_primary',
 		array(
 			'country_code' => '353',
 			'country' => 'Ireland',
-			'number' => '86 394 6391'
+			'number' => '863946391'
 		)
 	);
 
 	update_option(
 		'ct_company_details',
 		array(
-			'name' => 'Correct Translations Ltd.',
+			'name' => 'Correct Translations',
 		)
 	);
 }
@@ -66,7 +103,6 @@ add_filter( 'wp_title', 'ct_wp_title', 10, 2 );
  *
  * @return Structured call to action panel.
  */
-
 function ct_call_to_action_buttons() {
 	printf('
 		<div id="content_btns">
@@ -153,7 +189,7 @@ function ct_options_init() {
 
 	// Add fields to that section
 	add_settings_field(
-		$section_name,
+		$setting_name,
 		__('Primary Phone Number', 'ct-settings-page'),
 		'settings_constructor',
 		$page,

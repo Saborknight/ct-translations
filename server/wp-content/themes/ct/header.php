@@ -46,35 +46,19 @@
 					<div id="phone_number">
 						<?php
 							$number = get_option('ct_phone_primary');
-							// Number: (+353) 86 394 6391
-							// var_dump($number);
-							printf('<span id="region_code">(+%s)</span> <span>%s</span>', $number['country_code'], $number['number']);
+							printf('<span id="region_code">(+%s)</span><span>%s</span>', $number['country_code'], $number['number']);
 						?>
 					</div>
 				</div>
 				
-				<div id="language">
-					<ul>
-						<li class="active"><a href="<?php echo get_site_url(1); ?>"><div class="lang_icon est"></div>ET<div id="arrow"></div></a></li>
-						<li><a href="<?php echo get_site_url(2); ?>"><div class="lang_icon eng"></div>EN</a></li>
-						<li><a href="<?php echo get_site_url(3); ?>"><div class="lang_icon rus"></div>РУ</a></li>
-						<li class="last"><a href="<?php echo get_site_url(4); ?>"><div class="lang_icon fin"></div>FI</a></li>
-					</ul>
-				</div>
+				<?php do_action('ct_language_dropdown'); ?>
 			</div>
 		</div>
 		<div id="menu_area">
 			<div class="container">
 				<div id="menu_show"></div>
-				<?php
-					$args = array(
 
-						'exclude'  => 5
-
-					);
-				?>
-
-				<?php wp_nav_menu( $args ); ?> 
+				<?php wp_nav_menu( array('container' => 'div', 'container_class' => 'menu', 'menu_class' => '') ); ?>
 
 				<form id="search" role="search" method="get" action="<?php echo home_url( '/' ); ?>">
 					<input type="text" id="search-input" name="s" onfocus="if(this.value=='Otsi kodulehelt')this.value=''" onblur="if(this.value=='')this.value='Otsi kodulehelt'" value="Otsi kodulehelt" />
