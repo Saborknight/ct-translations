@@ -782,7 +782,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 }
 
 #copyright{
-	width: 300px;
+	width: 100%;
 	text-transform: uppercase;
 	color: #fff;
 	margin: 0 auto;
@@ -1100,7 +1100,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 	}
 	#bottom{
 		padding-bottom: 60px;
-		background: #FF3D00;
+		background: #FF0200;
 	}
 	#bottom_left{
 		text-align: center;

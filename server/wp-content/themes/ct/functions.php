@@ -45,7 +45,7 @@ add_action('after_setup_theme', 'ct_setup');
  *
  * @return nothing
  */
-function ct_init() {
+// function ct_init() {
 	update_option(
 		'ct_phone_primary',
 		array(
@@ -70,10 +70,11 @@ function ct_init() {
 			'name' => 'Correct Translations',
 			'type' => 'Ltd.',
 			'email' => 'ct@ct.ee',
-			'website' => 'www.ct.ee'
+			'website' => 'www.ct.ee',
+			'copyright_dates' => '2004-' . date('Y')
 		)
 	);
-}
+// }
 
 /**
  * Creates a nicely formatted and more specific title element text

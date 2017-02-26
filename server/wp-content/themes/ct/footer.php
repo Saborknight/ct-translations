@@ -92,7 +92,7 @@
 						</p>
 					</div>
 				</div>
-				<div id="copyright" class="bottom_text"><?php printf( _x('copyright &copy; correct translations oü %s', 'copyright-statement', 'ct'), '2004-' . date('Y')); ?></div>
+				<div id="copyright" class="bottom_text"><?php printf( _x('copyright &copy; %s %s %s', 'copyright-statement', 'ct'), $company['name'], $company['type'], $company['copyright_dates']); ?></div>
 				<div id="bottom_button"></div>
 			</div>
 		</div>
