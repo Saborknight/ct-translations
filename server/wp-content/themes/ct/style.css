@@ -94,8 +94,13 @@ input {
 	outline: none;	
 }
 a {
+	color: #FF3D00;
 	outline: none;
-	text-decoration: none !important;
+	text-decoration: none;
+}
+a:hover, a:active, a:focus{
+	color: #FF0200;
+	text-decoration: underline;
 }
 
 /* -- TOP -- */
@@ -157,20 +162,23 @@ a {
 }
 #phone_number{
 	float: left;
-	font-family: exomedium, Arial, sans-serif;
-	font-size: 19px;
-	line-height: 20px;
-	color: #555d6a;
 	padding: 12px 0px 0px 12px;
 	border-radius: 194px / 36px;
 	box-shadow: 12px 32px 9px -13px rgba(0, 0, 0, .1);
 }
+#phone_number a{
+	font-family: exomedium, Arial, sans-serif;
+	font-size: 19px;
+	line-height: 20px;
+	color: #555d6a;
+}
+#phone_number a:hover, #phone_number a:active, #phone_number a:focus{
+	color: #7f8b9f;
+	text-decoration: none;
+}
 #region_code{
 	float: left;
 	font-family: exolight, Arial, sans-serif;
-	/*font-size: 20px;
-	line-height: 20px;
-	color: #555d6a;*/
 }
 #language{
 	position: absolute;
@@ -776,11 +784,6 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 	box-shadow: inset 0px 18px 20px -13px rgba(0,0,0,.2);
 	padding: 48px 0 114px 0;
 }
-#bottom_text{
-	font-family: exomedium, Arial, sans-serif;
-	font-size: 12px;
-	line-height: 1.6;
-}
 #table{
 	display: table;
 	margin: 0 auto;
@@ -817,7 +820,6 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 }
 #bottom_right{
 	display: table-row;
-	line-height: 1.6;
 	float: left;
 	width: 300px;
 }
@@ -830,9 +832,9 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 .bottom_text{
 	font-family: exomedium, Arial, sans-serif;
 	font-size: 12px;
+	line-height: 1.6;
 }
 .bottom_text a{
-	text-decoration: none;
 	color: white;
 }
 
