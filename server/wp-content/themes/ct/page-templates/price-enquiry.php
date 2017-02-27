@@ -18,9 +18,8 @@ get_header(); ?>
 				<?php
 if(isset($_POST['submit'])) {
 	
-	$email_to = "ct@ct.ee";
-	$email_subject = _x('Request for a quote ', 'form-sent-message', 'ct') . $_POST['name'];
-
+	$email_to = get_option('ct_company_details')['email'];
+	$email_subject = _x('Request for a quote ', 'form-sent-message', 'ct') . $_POST['client_name'];
 
 	function died($error) {
 		// your error code can go here
@@ -36,17 +35,15 @@ if(isset($_POST['submit'])) {
 		);
 	}
 
-
-
 	$name = $_POST['client_name']; // required
 	$email_from = $_POST['client_email']; // required
 	$telephone = $_POST['client_phone']; // not required
-	$contact_person = $_POST['contact_person']; // required
-	$country = $_POST['country']; // required
+	$contact_person = $_POST['contact_person']; // not required
+	$country = $_POST['country']; // not required
 	$language_from = $_POST['language_from']; // required
 	$language_to = $_POST['language_to']; // required
-	$deadline = $_POST['deadline']; // required
-	$description = $_POST['description']; // required
+	$deadline = $_POST['deadline']; // not required
+	$description = $_POST['description']; // not required
 
 	$upload_dir = wp_upload_dir();  // look for this function in wordpress documentation at codex 
 	$upload_dir = $upload_dir['path'];
@@ -60,61 +57,78 @@ if(isset($_POST['submit'])) {
 		
 		$count++;
 	}
-	
-
 
 	$error_message = "";
 	$email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
 	if(!preg_match($email_exp,$email_from)) {
-		$error_message .= sprintf('<p class="error-message">%s</p><br />', __('The given email address is invalid.', 'ct'));
+		$error_message .= sprintf('<p class="error-message">%s</p><br />', _x('The given email address is invalid.', 'form-error-messages', 'ct'));
 	}
 	if(strlen($name) < 2) {
-		$error_message .= sprintf('<p class="error-message">%s</p><br />', __('The name you gave is incorrect.', 'ct'));
+		$error_message .= sprintf('<p class="error-message">%s</p><br />', _x('The name you gave is incorrect.', 'form-error-messages', 'ct'));
 	}
-	if(strlen($contact_person) < 2){
-		$error_message .= sprintf('<p class="error-message">%s</p><br />', __('The given contact name is incorrect.', 'ct'));
+	if($telephone !== '') {
+		if(is_numeric($telephone)) {
+			if(
+				strlen(str_replace(['-', '+', ' ', '(', ')'], ['', '00', '', '', ''], $telephone)) <= 9
+				|| strlen(str_replace(['-', '+', ' ', '(', ')'], ['', '00', '', '', ''], $telephone)) >= 15
+			) {
+				$error_message .= sprintf(
+					'<p class="error-message">%s</p><br />',
+					_x('The given phone number has an incorrect length', 'form-error-messages', 'ct')
+				);
+			}
+		} else {
+			$error_message .= sprintf('<p class="error_message">%s</p><br />', _x('The given phone number is invalid.', 'form-error-messages', 'ct'));
+		}
+	}
+	if(strlen($contact_person) < 2 && $contact_person !== ''){
+		$error_message .= sprintf('<p class="error-message">%s</p><br />', _x('The given contact name is incorrect.', 'form-error-messages', 'ct'));
 	}
 	if(strlen($language_from) < 2){
-		$error_message .= sprintf('<p class="error-message">%s</p><br />', __('The inserted source language is invalid.', 'ct'));
+		$error_message .= sprintf('<p class="error-message">%s</p><br />', _x('The inserted source language is invalid.', 'form-error-messages', 'ct'));
 	}
 	if(strlen($language_to) < 2){
-		$error_message .= sprintf('<p class="error-message">%s</p><br />', __('The inserted target language is invalid', 'ct'));
+		$error_message .= sprintf('<p class="error-message">%s</p><br />', _x('The inserted target language is invalid.', 'form-error-messages', 'ct'));
 	}
-	if(strlen($country) < 2){
-		$error_message .= sprintf('<p class="error-message">%s</p><br />', __('The given country is invalid.', 'ct'));
+	if(strlen($country) < 2 && $country !== ''){
+		$error_message .= sprintf('<p class="error-message">%s</p><br />', _x('The given country is invalid.', 'form-error-messages', 'ct'));
 	}
-	if(strlen($deadline) < 4) {
-		$error_message .= sprintf('<p class="error-message">%s</p><br />', __('The given date is invalid.', 'ct'));
+	if(strlen($deadline) < 4 && $deadline !== '') {
+		$error_message .= sprintf('<p class="error-message">%s</p><br />', _x('The given date is invalid.', 'form-error-messages', 'ct'));
 	}
-	if(strlen($description) < 4) {
-		$error_message .= sprintf('<p class="error-message">%s</p><br />', __('The description is too chort', 'ct'));
+	if(strlen($description) < 4 && $description !== '') {
+		$error_message .= sprintf('<p class="error-message">%s</p><br />', _x('The description is too short.', 'form-error-messages', 'ct'));
 	}
 
-	$email_message = sprintf( __("Price enquiry from: %s\n\n", 'ct'), 'www.ct.ee');
+	/* translators: %s is the website which the price enquiry comes from */
+	$email_message = sprintf( __("Price enquiry from: %s\n\n", 'ct'), get_site_url());
 	
 	function clean_string($string) {
 		$bad = array("content-type","bcc:","to:","cc:","href");
 		return str_replace($bad,"",$string);
 	}
-	
-	$email_message .= _x('Name: ', 'form-message-fields', 'ct') . clean_string($name) . "\n";
-	$email_message .= _x('Email: ', 'form-message-fields', 'ct') . clean_string($email_from) . "\n";
-	$email_message .= _x('Phone number: ', 'form-message-fields', 'ct') . clean_string($telephone) . "\n";
-	$email_message .= _x('Country: ', 'form-message-fields', 'ct') . clean_string($country) . "\n";
-	$email_message .= _x('Source language: ', 'form-message-fields', 'ct') . clean_string($language_from) . "\n";
-	$email_message .= _x('Target language: ', 'form-message-fields', 'ct') . clean_string($language_to) . "\n";
-	$email_message .= _x('Deadline: ', 'form-message-fields', 'ct') . clean_string($deadline) . "\n";
-	$email_message .= _x('Description: ', 'form-message-fields', 'ct') . clean_string($description) . "\n";
 
-	$header = sprintf('From: %s www.ct.ee <ct@ct.ee>', __('Price enquiry page'));
-	 
-	$sendmail = wp_mail($email_to, $email_subject, $email_message, $header, $attachments);
+	$email_message .= _x('Name: ', 'form-message-details', 'ct') . clean_string($name) . "\n";
+	$email_message .= _x('Email: ', 'form-message-details', 'ct') . clean_string($email_from) . "\n";
+	$email_message .= _x('Phone number: ', 'form-message-details', 'ct') . clean_string($telephone) . "\n";
+	$email_message .= _x('Country: ', 'form-message-details', 'ct') . clean_string($country) . "\n";
+	$email_message .= _x('Source language: ', 'form-message-details', 'ct') . clean_string($language_from) . "\n";
+	$email_message .= _x('Target language: ', 'form-message-details', 'ct') . clean_string($language_to) . "\n";
+	$email_message .= _x('Deadline: ', 'form-message-details', 'ct') . clean_string($deadline) . "\n";
+	$email_message .= _x('Description: ', 'form-message-details', 'ct') . clean_string($description) . "\n";
+
+	$header = sprintf('From: %s %s <ct@ct.ee>', __('Price enquiry page', 'form-message-details', 'ct'), get_site_url());
+
 	if(strlen($error_message) > 0){
-		died($error_message); 
-	} else if($sendmail) {
-		printf('<h2 class="success-message">%s</h2>', _x('Message sent!', 'form-notice-messages', 'ct'));
+		died($error_message);
 	} else {
-		printf('<h2 class="error-message">%s</h2>', _x('Message failed to send, please try again!', 'form-notice-messages', 'ct'));
+		$sendmail = wp_mail($email_to, $email_subject, $email_message, $header, $attachments);
+
+		if($sendmail) {
+			printf('<h2 class="success-message">%s</h2>', _x('Message sent!', 'form-notice-messages', 'ct'));
+		} else {
+			printf('<h2 class="error-message">%s</h2>', _x('Message failed to send, please try again!', 'form-notice-messages', 'ct'));
+		}
 	}
 }
 ?>
