@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Avaleht
+ * Template Name: Home Page (deprecated)
  *
  * @package WordPress
  * @subpackage CT

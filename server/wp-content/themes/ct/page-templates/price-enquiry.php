@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Hinnapäring
+ * Template Name: Price Enquiry
  *
  * @package WordPress
  * @subpackage CT
