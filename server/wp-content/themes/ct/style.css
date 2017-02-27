@@ -76,6 +76,36 @@ Text Domain: ct
 	font-weight: normal;
 	font-style: normal;
 }
+@font-face {
+	font-family: 'exo_cyrillicregular';
+	src: url('fonts/exocyrillic-regular-webfont.eot');
+	src: url('fonts/exocyrillic-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/exocyrillic-regular-webfont.woff') format('woff'),
+		 url('fonts/exocyrillic-regular-webfont.ttf') format('truetype'),
+		 url('fonts/exocyrillic-regular-webfont.svg#exo_cyrillicregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'pt_sansitalic';
+	src: url('fonts/pts56f-webfont.eot');
+	src: url('fonts/pts56f-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/pts56f-webfont.woff') format('woff'),
+		 url('fonts/pts56f-webfont.ttf') format('truetype'),
+		 url('fonts/pts56f-webfont.svg#pt_sansitalic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'BoblicRegular';
+	src: url('fonts/exo-extralight-webfont.eot');
+	src: url('fonts/exo-extralight-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/exo-extralight-webfont.woff') format('woff'),
+		 url('fonts/exo-extralight-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css?family=Exo+2&subset=cyrillic');
 
 body{
 	float: left;
@@ -136,7 +166,7 @@ a:hover, a:active, a:focus{
 	background: url(img/logos/ct_logo_fi.png) no-repeat;
 	background-size: 100%;
 }
-#logo:lang(no){
+#logo:lang(nb), #logo:lang(no){
 	background: url(img/logos/ct_logo_no.png) no-repeat;
 	background-size: 100%;
 }
@@ -855,7 +885,28 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 #bottom_button:hover{
 	cursor: pointer;
 }
-/* -- MEDIA QUERIES --*/
+/* -- LANGUAGE SPECIFIC -- */
+.menu ul li a:lang(ru),
+#wrapper h1:lang(ru),
+#wrapper p:lang(ru),
+#wrapper h2:lang(ru),
+#content ul li a:lang(ru),
+#clients_header:lang(ru),
+#bottom_left:lang(ru),
+.bottom_text:lang(ru){
+	font-family: 'Exo 2', Arial, sans-serif;
+	font-family: exo_cyrillicregular, Arial, sans-serif;
+}
+.menu ul li a:lang(ru){
+	padding: 0px 16px;
+	font-size: 13px;
+	line-height: 40px;
+	height: 60px;
+}
+#title:lang(ru){
+	font-family: pt_sansitalic, Arial, sans-serif;
+}
+/* -- MEDIA QUERIES -- */
 @media only screen and (max-width: 1280px) {
 	#logo {
 		margin-left: 40px;
