@@ -109,8 +109,39 @@ a {
 	float: left;
 	width: 470px;
 	height: 78px;
-	background: url(img/logo.png) no-repeat;
 	margin-left: 150px;
+}
+#logo:lang(en){
+	background: url(img/logos/ct_logo_en.png) no-repeat;
+	background-size: 100%;
+}
+#logo:lang(da){
+	background: url(img/logos/ct_logo_da.png) no-repeat;
+	background-size: 100%;
+}
+#logo:lang(de){
+	background: url(img/logos/ct_logo_de.png) no-repeat;
+	background-size: 100%;
+}
+#logo:lang(et){
+	background: url(img/logos/ct_logo_et.png) no-repeat;
+	background-size: 100%;
+}
+#logo:lang(fi){
+	background: url(img/logos/ct_logo_fi.png) no-repeat;
+	background-size: 100%;
+}
+#logo:lang(no){
+	background: url(img/logos/ct_logo_no.png) no-repeat;
+	background-size: 100%;
+}
+#logo:lang(ru){
+	background: url(img/logos/ct_logo_ru.png) no-repeat;
+	background-size: 100%;
+}
+#logo:lang(sv){
+	background: url(img/logos/ct_logo_sv.png) no-repeat;
+	background-size: 100%;
 }
 #phone{
 	float: right;
@@ -916,7 +947,6 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 		margin-left: 36px;
 		width: 424px;
 		height: 75px;
-		background: url(img/logo2.png) no-repeat;
 	}
 	#phone{
 		display: none;
@@ -1020,7 +1050,6 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 		margin: 0 auto;
 		width: 335px;
 		height: 73px;
-		background: url(img/logo3.png) no-repeat;
 	}
 	#phone{
 		display: none;
@@ -1158,7 +1187,6 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 		margin: 0 auto;
 		width: 250px;
 		height: 54px;
-		background: url(img/logo4.png) no-repeat;
 	}
 	#menu_area{
 		padding: 10px 0;
