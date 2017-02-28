@@ -896,12 +896,13 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 #wrapper h1:lang(ru),
 #wrapper p:lang(ru),
 #wrapper h2:lang(ru),
-#content ul li a:lang(ru),
 #clients_header:lang(ru),
 #bottom_left:lang(ru),
 .bottom_text:lang(ru){
-	font-family: 'Exo 2', Arial, sans-serif;
 	font-family: exo_cyrillicregular, Arial, sans-serif;
+}
+#content ul li a:lang(ru){
+	font-family: 'Exo 2', Arial, sans-serif;
 }
 .menu ul li a:lang(ru){
 	padding: 0px 16px;
