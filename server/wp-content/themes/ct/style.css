@@ -8,6 +8,7 @@ Text Domain: ct
 */
 
 /* FONTS */
+@import url('https://fonts.googleapis.com/css?family=Exo+2&subset=cyrillic');
 @font-face {
 	font-family: 'exomedium';
 	src: url('fonts/exo-medium-webfont.eot');
@@ -105,7 +106,6 @@ Text Domain: ct
 	font-weight: normal;
 	font-style: normal;
 }
-@import url('https://fonts.googleapis.com/css?family=Exo+2&subset=cyrillic');
 
 body{
 	float: left;
@@ -326,31 +326,38 @@ a:hover, a:active, a:focus{
 
 /* SEARCH */
 #search {
-	float: right;
+	position: absolute;
+	right: 0;
+	top: 0;
 	margin-top: 6px;
 	margin-bottom: 0;
-}		
+	background-color: #f3f3f5;
+	border-radius: 20px;
+	overflow: hidden;
+	z-index: 10;
+}
+#search:hover #search-input, #search #search-input:focus {
+	padding-left: 20px;
+	padding-right: 20px; 
+	width: 150px;
+}
 #search-input {
-	float: left;
 	color: #565d67;
-	background: #f3f3f5;
-	border-top-left-radius: 20px;
-	border-bottom-left-radius: 20px;
+	background-color: transparent;
 	border: none;
-	padding: 13px 20px 14px 20px;
+	padding: 13px 0 14px 0;
 	font-family: exomedium, Arial, sans-serif;
 	font-size: 15px;
 	line-height: 15px;
-	width: 151px;
+	width: 0;
+	transition: all 0.5s ease-in-out;
 }	
 #search-btn {
 	float: left;
-	border-top-right-radius: 20px;
-	border-bottom-right-radius: 20px;
 	border: none;
-	width: 45px;
+	width: 42px;
 	height: 42px;
-	background: #f3f3f5 url(img/search-btn.png) no-repeat center center;
+	background: transparent url(img/search-btn.png) no-repeat center center;
 }		
 #services {
 	float: left;
@@ -393,7 +400,7 @@ a:hover, a:active, a:focus{
 	width: 960px;
 }
 #wrapper h1{
-	font-family: exomedium, Arial sans-serif;
+	font-family: exomedium, Arial, sans-serif;
 	font-size: 36px;
 	line-height: 46px;
 	color: #FF3D00;
@@ -405,7 +412,7 @@ a:hover, a:active, a:focus{
 	float: left;
 	width: 38%;
 	margin-top: -5px;
-	font-family: exomedium, Arial sans-serif;
+	font-family: exomedium, Arial, sans-serif;
 	font-size: 15px;
 	line-height: 22px;
 	color: #555d6a;
@@ -419,7 +426,7 @@ a:hover, a:active, a:focus{
 	width: 80% !important;
 }
 #wrapper h2{
-	font-family: exobold, Arial sans-serif;
+	font-family: exobold, Arial, sans-serif;
 	font-weight: normal;
 	font-size: 22px;
 	line-height: 22px;
@@ -431,7 +438,7 @@ a:hover, a:active, a:focus{
 }
 .container.wide_paragraph a{
 	color: #FF3D00;
-	font-family: exomedium, Arial sans-serif;
+	font-family: exomedium, Arial, sans-serif;
 	font-size: 15px;
 	line-height: 15px;
 	clear: both;
@@ -440,7 +447,7 @@ a:hover, a:active, a:focus{
 }
 h2 a{
 	color: #FF3D00;
-	font-family: exobold, Arial sans-serif !important;
+	font-family: exobold, Arial, sans-serif !important;
 	font-size: 22px !important;
 	line-height: 22px !important;
 	margin-left: 0 !important;
@@ -450,7 +457,7 @@ h2 a{
 	width: 775px !important;
 }
 .price_request{
-	font-family: exomedium, Arial sans-serif;
+	font-family: exomedium, Arial, sans-serif;
 	font-size: 15px;
 	line-height: 15px;
 	border: none;
@@ -572,9 +579,8 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 	color: #fff;
 	margin-bottom: 150px;
 	margin-top: -100px;
-	background: url(img/10_years.png) no-repeat 110px top;
+	background: url(img/10_years.png) no-repeat right 110px top;
 	height: 170px;
-}
 }
 #content_btns{
 	width: 100%;
@@ -810,7 +816,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 #bottom{
 	float: left;
 	width: 100%;
-	background: #FF0200 url(img/bottom_bg.png) no-repeat top right;
+	background: #FF3D00 url(img/bottom_bg.png) no-repeat top right;
 	box-shadow: inset 0px 18px 20px -13px rgba(0,0,0,.2);
 	padding: 48px 0 114px 0;
 }
@@ -899,9 +905,8 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 }
 .menu ul li a:lang(ru){
 	padding: 0px 16px;
-	font-size: 13px;
-	line-height: 40px;
-	height: 60px;
+	line-height: 34px;
+	height: 55px;
 }
 #title:lang(ru){
 	font-family: pt_sansitalic, Arial, sans-serif;
@@ -1200,7 +1205,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 	}
 	#bottom{
 		padding-bottom: 60px;
-		background: #FF0200;
+		background: #FF3D00;
 	}
 	#bottom_left{
 		text-align: center;
