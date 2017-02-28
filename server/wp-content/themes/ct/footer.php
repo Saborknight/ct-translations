@@ -12,12 +12,21 @@ $directory = get_template_directory() . '/img/clients/';
 $clients = glob($directory . "*.{jpg,png,gif}", GLOB_BRACE);
 if($clients) {
 	$filecount = 0;
+	$hidden_filecount = 0;
 	foreach($clients as $logo) {
 		++$filecount;
-		$client_items[] = sprintf('<li class="clients%d"></li>', $filecount);
+		$logo_number = preg_replace('/[^0-9]/', '', $logo);
+
+		if(preg_match('/-OLD/i', $logo)) {
+			// If the file has been renamed to "-OLD" to be excluded
+			// Make sure the total width accounts for the exclusion
+			++$hidden_filecount;
+		} else {
+			$client_items[] = sprintf('<li class="clients%d"></li>', $logo_number);
+		}
 	}
 
-	$wrapper_width = $filecount * 200;
+	$wrapper_width = ($filecount - $hidden_filecount) * 200;
 }
 ?>
 	<div id="clients">
@@ -87,7 +96,7 @@ if($clients) {
 			</div>
 		</div>
 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
 

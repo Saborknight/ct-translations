@@ -132,6 +132,9 @@ a:hover, a:active, a:focus{
 	color: #FF0200;
 	text-decoration: underline;
 }
+.hidden{
+	display: none;
+}
 
 /* -- TOP -- */
 #top {
@@ -810,6 +813,36 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 }
 .clients30{
 	background: url(img/clients/c30.png);
+}
+.clients31{
+	background: url(img/clients/c31.png);
+}
+.clients32{
+	background: url(img/clients/c32.png);
+}
+.clients33{
+	background: url(img/clients/c33.png);
+}
+.clients34{
+	background: url(img/clients/c34.png);
+}
+.clients35{
+	background: url(img/clients/c35.png);
+}
+.clients36{
+	background: url(img/clients/c36.png);
+}
+.clients37{
+	background: url(img/clients/c37.png);
+}
+.clients38{
+	background: url(img/clients/c38.png);
+}
+.clients39{
+	background: url(img/clients/c39.png);
+}
+.clients40{
+	background: url(img/clients/c40.png);
 }
 
 /* -- BOTTOM -- */
