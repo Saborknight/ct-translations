@@ -44,7 +44,7 @@
 				<div id="phone">
 					<div id="phone_icon"></div>
 					<div id="phone_number">
-						<?php $phone = get_option('ct_phone_primary'); ?>
+						<?php $phone = get_option('ct_company_details')['phone_primary']; ?>
 						<a href="<?php printf('tel:+%s%s', $phone['country_code'], str_replace(' ', '', $phone['number'])); ?>">
 							<?php
 								printf('<span id="region_code">(+%s)</span><span>%s</span>', $phone['country_code'], str_replace(' ', '', $phone['number']));

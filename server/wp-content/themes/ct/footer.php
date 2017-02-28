@@ -54,9 +54,9 @@ if($clients) {
 					<div id="bottom_right">
 							<?php
 								// Load up the details
-								$phone_primary = get_option('ct_phone_primary');
-								$phone_secondary = get_option('ct_phone_secondary');
 								$company = get_option('ct_company_details');
+								$phone_primary = $company['phone_primary'];
+								$phone_secondary = $company['phone_secondary'];
 
 								printf('<h5 class="bottom_header">%s %s</h5>', $company['name'], $company['type']);
 							?>

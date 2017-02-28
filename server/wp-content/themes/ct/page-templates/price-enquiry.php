@@ -101,7 +101,7 @@ if(isset($_POST['submit'])) {
 	}
 
 	/* translators: %s is the website which the price enquiry comes from */
-	$email_message = sprintf( __("Price enquiry from: %s\n\n", 'ct'), get_site_url());
+	$email_message = sprintf( _x("Price enquiry from: %s\n\n", 'form-message-details', 'ct'), get_site_url());
 	
 	function clean_string($string) {
 		$bad = array("content-type","bcc:","to:","cc:","href");
@@ -117,7 +117,7 @@ if(isset($_POST['submit'])) {
 	$email_message .= _x('Deadline: ', 'form-message-details', 'ct') . clean_string($deadline) . "\n";
 	$email_message .= _x('Description: ', 'form-message-details', 'ct') . clean_string($description) . "\n";
 
-	$header = sprintf('From: %s %s <ct@ct.ee>', __('Price enquiry page', 'form-message-details', 'ct'), get_site_url());
+	$header = sprintf('From: %s %s <ct@ct.ee>', _x('Price enquiry page', 'form-message-details', 'ct'), get_site_url());
 
 	if(strlen($error_message) > 0){
 		died($error_message);

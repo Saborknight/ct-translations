@@ -14,8 +14,8 @@
  */
 function ct_options_menu() {
 	add_options_page(
-		__('CT Custom Settings', 'ct-settings', 'ct'), // Page title
-		__('CT Settings', 'ct-settings', 'ct'), // Menu title
+		_x('CT Custom Settings', 'ct-settings', 'ct'), // Page title
+		_x('CT Settings', 'ct-settings', 'ct'), // Menu title
 		'manage_options', // Capability
 		'ct_settings_page',
 		'ct_page_constructor'
