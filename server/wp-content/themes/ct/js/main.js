@@ -2,7 +2,7 @@ var interval_logos;
 
 jQuery(window).load(function($){
 
-	setInterval(ChangeBg(), 3000);
+	BgInterval = setInterval(ChangeBg, 3000);
 
 });
 
@@ -108,6 +108,14 @@ jQuery(document).ready(function($) {
 
 function ChangeBg($){
 	(function($) {
+		// If not on homepage, exit and stop the interval loop!
+		if( $('body.home').length === 0 ) {
+			clearInterval(BgInterval);
+			console.log('Not on Homepage, returning peacefully');
+
+			return;
+		}
+
 		$current = $('#backgrounds').find('.active');
 		$first = $('#backgrounds').children('.bg').first();
 		$next = $current.next();
