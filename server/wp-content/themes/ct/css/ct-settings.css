@@ -1,0 +1,26 @@
+.inline-group-label {
+	padding: 0.3em;
+/*	border: 1px solid #cacaca;
+	background: #e6e6e6;*/
+	color: #0a0a0a;
+	text-align: center;
+	white-space: nowrap;
+}
+.company_country_code {
+	width: 3em;
+}
+.company_number {
+	width: 6.7em;
+}
+
+@media screen and (max-width: 782px) {
+	.form-table td input.company_country_code, .form-table td input.company_number {
+		display: inline-block;
+	}
+	.form-table td input.company_country_code {
+		width: 3em;
+	}
+	.form-table td input.company_number {
+		width: 85%;
+	}
+}

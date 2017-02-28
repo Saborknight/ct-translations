@@ -35,10 +35,10 @@ jQuery(document).ready(function($) {
 	var logosVisible = ($('#clients_scrollable').width())/200;
 
 	$( window ).resize(function() {
- 		$('#clients_scrollable ul').css('margin-left', 0 + 'px');	
- 		countRight = ($('#clients_scrollable ul').width() - $('#clients_scrollable').width())/200;
- 		logosVisible = ($('#clients_scrollable').width())/200;
- 		offset = 0;
+		$('#clients_scrollable ul').css('margin-left', 0 + 'px');
+		countRight = ($('#clients_scrollable ul').width() - $('#clients_scrollable').width())/200;
+		logosVisible = ($('#clients_scrollable').width())/200;
+		offset = 0;
 	});
 
 	interval_logos = setInterval(function(){$('.clients_btn.right').click();},5000);
@@ -58,12 +58,12 @@ jQuery(document).ready(function($) {
 					countLeft += countRight;
 					countRight -= countRight;
 				}
-    	}
-	      	else{
-	    		offset += logosVisible*200;
-		    	countRight -= logosVisible;
-		    	countLeft += logosVisible;
-	    	}
+			}
+			else{
+				offset += logosVisible*200;
+				countRight -= logosVisible;
+				countLeft += logosVisible;
+			}
 		}
 		else{
 			if(countLeft < logosVisible){
@@ -78,17 +78,17 @@ jQuery(document).ready(function($) {
 					countLeft -= countLeft;
 				}
 			}
-	    	else{
-	    		offset -= logosVisible*200;
-		    	countLeft -= logosVisible;
-		    	countRight += logosVisible;
-	    	}
+			else{
+				offset -= logosVisible*200;
+				countLeft -= logosVisible;
+				countRight += logosVisible;
+			}
 		}
 		$('#clients_scrollable ul').animate(
-	      	{'margin-left': '-' + offset + 'px'},
-	       	'slow'
-	 	);	
-	 	interval_logos = setInterval(function(){$('.clients_btn.right').click();},5000);
+			{'margin-left': '-' + offset + 'px'},
+			'slow'
+		);
+		interval_logos = setInterval(function(){$('.clients_btn.right').click();},5000);
 	});
 
 	$('#menu_show').click(function(){
@@ -102,8 +102,8 @@ jQuery(document).ready(function($) {
 	});
 	
 	$('#bottom_button').click(function(){
-    	$("html, body").animate({ scrollTop: 0 }, 500);
-    });
+		$("html, body").animate({ scrollTop: 0 }, 500);
+	});
 });
 
 function ChangeBg($){

@@ -45,36 +45,31 @@ add_action('after_setup_theme', 'ct_setup');
  *
  * @return nothing
  */
-// function ct_init() {
-	update_option(
-		'ct_phone_primary',
-		array(
-			'country_code' => '353',
-			'country' => 'Ireland',
-			'number' => '86 394 6391'
-		)
-	);
-
-	update_option(
-		'ct_phone_secondary',
-		array(
-			'country_code' => '372',
-			'country' => 'Estonia',
-			'number' => '5346 4931'
-		)
-	);
-
-	update_option(
-		'ct_company_details',
-		array(
-			'name' => 'Correct Translations',
-			'type' => 'Ltd.',
-			'email' => 'ct@ct.ee',
-			'website' => 'www.ct.ee',
-			'copyright_dates' => '2004-' . date('Y')
-		)
-	);
-// }
+function ct_init() {
+	if(!get_option('ct_company_details')) {
+		update_option(
+			'ct_company_details',
+			array(
+				'name' => 'Correct Translations',
+				'type' => 'Ltd.',
+				'email' => 'ct@ct.ee',
+				'website' => 'www.ct.ee',
+				'copyright_dates' => '2004-' . date('Y'),
+				'phone_primary' => array(
+					'country_code' => '353',
+					'country' => 'Ireland',
+					'number' => '86 394 6391'
+				),
+				'phone_secondary' => array(
+					'country_code' => '372',
+					'country' => 'Estonia',
+					'number' => '5346 4931'
+				),
+			)
+		);
+	}
+}
+add_action('after_switch_theme', 'ct_init');
 
 /**
  * Creates a nicely formatted and more specific title element text
@@ -184,101 +179,11 @@ function ct_language_dropdown_list_dropdown(){
 }
 add_action('ct_language_dropdown', 'ct_language_dropdown_list_dropdown');
 
-function ct_options_init() {
-	// Create Setting
-	$settings_group = 'ct_custom_settings';
-	$setting_name = 'ct_phone_primary';
-	register_setting( $settings_group, $setting_name );
-
-	// Create section of Page
-	$settings_section = 'contact_details';
-	$page = $settings_group;
-	add_settings_section(
-		$settings_section,
-		__('CT Contact Details', 'ct-settings-page', 'ct'),
-		'Some text?',
-		$page
-	);
-
-	// Add fields to that section
-	add_settings_field(
-		$setting_name,
-		__('Primary Phone Number', 'ct-settings-page'),
-		'settings_constructor',
-		$page,
-		$settings_section
-	);
+function ct_enqueue_scripts() {
+		wp_enqueue_script('ct_settings_js', get_template_directory_uri() . '/js/ct-settings.js', array('jquery'), '20153');
+		wp_enqueue_style('ct_settings_css', get_template_directory_uri() . '/css/ct-settings.css');
 }
+add_action('admin_enqueue_scripts', 'ct_enqueue_scripts');
 
-function ct_options_menu() {
-	add_options_page(
-		__('CT Custom Settings', 'custom-settings-page', 'ct'),
-		__('CT Settings', 'custom-settings-page', 'ct'),
-		'manage_options',
-		'ct-custom-settings-page',
-		'ct_options_page_constructor'
-	);
-}
-
-function ct_options_page_constructor() {
-	if(!current_user_can('manage_options')) {
-		wp_die(_x('You do not have sufficient permissions to access this page.', 'status-messages', 'ct'));
-	}
-
-	get_template_part('page-templates/settings', 'main');
-}
-
-function ct_options_section_contructor() {
-	echo '<div>Section</div>';
-}
-
-function ct_options_field_constructor() {
-	$option = '<p>Yo</p>';
-	echo $option;
-}
-add_action('admin_menu', 'ct_options_menu');
-add_action('admin_init', 'ct_options_init');
-
-// function ct_options_page() {
-// 	add_options_page(
-// 		__('CT Custom Settings', 'custom-settings-page', 'ct'),
-// 		__('CT Settings', 'custom-settings-page', 'ct'),
-// 		'manage_options',
-// 		'ct-custom-settings-page',
-// 		'ct_options_page_contructor'
-// 	);
-// }
-
-// function ct_options_page_init() {
-// 	register_setting('ct-contact-details', 'phone-number');
-// 	add_settings_section('ct-contact-details', _x('CT Contact Details', 'custom-settings-page', 'ct'), '', 'ct-custom-settings-page');
-// 	add_settings_field('ct-contact-details', _x('Primary Phone Number', 'custom-settings-page', 'ct'), '', 'ct-custom-settings-page');
-// }
-
-// function ct_options_page_contructor() {
-// 	if(!current_user_can('manage_options')) {
-// 		wp_die(_x('You do not have sufficient permissions to access this page.', 'status-messages', 'ct'));
-// 	}
-
-// 	settings_fields('ct-contact-details');
-
-// 	printf(
-// 		'<div class="wrap">
-// 			<h1>%s</h1>
-// 			<form method="POST" action="options.php">
-// 				%s
-// 				%s
-// 			</form>
-// 		</div>',
-// 		__('CT Custom Settings', 'custom-settings-page', 'ct'),
-// 		do_settings_sections('ct-contact-details'),
-// 		submit_button()
-// 	);
-// }
-// add_action('admin_menu', 'ct_options_page');
-// add_action('admin_init', 'ct_options_page_init');
-
-// function ct_field_renderer() {
-// 	echo '<input type="number" name="ct_phone_primary_number" value="' . get_option('ct_phone_primary', '')['number'] . '">';
-// }
+include('ct-settings.php');
 ?>
