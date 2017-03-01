@@ -133,13 +133,13 @@ if(isset($_POST['submit'])) {
 }
 ?>
 				<form id="price_check" method="post" action="" enctype="multipart/form-data">
-					<input type="text" class="price_request" name="client_name" placeholder="<?php _ex('Company or person (name)', 'form-fields', 'ct'); ?>">
-					<input type="email" class="price_request" name="client_email" placeholder="<?php _ex('E-mail', 'form-fields', 'ct'); ?>">
+					<input required type="text" class="price_request" name="client_name" placeholder="<?php _ex('Company or person (name)', 'form-fields', 'ct'); ?>">
+					<input required type="email" class="price_request" name="client_email" placeholder="<?php _ex('E-mail', 'form-fields', 'ct'); ?>">
 					<input type="tel" class="price_request" name="client_phone" placeholder="<?php _ex('Phone number', 'form-fields', 'ct'); ?>">
 					<input type="text" class="price_request" name="contact_person" placeholder="<?php _ex('Contact person', 'form-fields', 'ct'); ?>">
 					<input type="text" class="price_request" name="country" placeholder="<?php _ex('Country', 'form-fields', 'ct'); ?>">
-					<input type="text" class="price_request" name="language_from" placeholder="<?php _ex('Source language', 'form-fields', 'ct'); ?>">
-					<input type="text" class="price_request" name="language_to" placeholder="<?php _ex('Target language', 'form-fields', 'ct'); ?>">
+					<input required type="text" class="price_request" name="language_from" placeholder="<?php _ex('Source language', 'form-fields', 'ct'); ?>">
+					<input required type="text" class="price_request" name="language_to" placeholder="<?php _ex('Target language', 'form-fields', 'ct'); ?>">
 					<input type="text" class="price_request" name="deadline" placeholder="<?php _ex('Deadline', 'form-fields', 'ct'); ?>">
 					<textarea class="price_request description" name="description" placeholder="<?php _ex('Translated abstract of the work (including volume of work)', 'form-fields', 'ct'); ?>" style="resize: none;"></textarea>
 					<h2><?php _ex('Add file(id):', 'form-fields', 'ct'); ?></h2>

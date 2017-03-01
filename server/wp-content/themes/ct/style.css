@@ -928,12 +928,12 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 .menu ul li a:lang(ru),
 #wrapper h1:lang(ru),
 #wrapper p:lang(ru),
-#wrapper h2:lang(ru),
-#clients_header:lang(ru),
-#bottom_left:lang(ru),
-.bottom_text:lang(ru){
+#wrapper h2:lang(ru){
 	font-family: exo_cyrillicregular, Arial, sans-serif;
 }
+.bottom_text:lang(ru),
+#clients_header:lang(ru),
+#bottom_left:lang(ru),
 #content ul li a:lang(ru){
 	font-family: 'Exo 2', Arial, sans-serif;
 }
@@ -941,6 +941,9 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 	padding: 0px 16px;
 	line-height: 34px;
 	height: 55px;
+}
+.bottom_text:lang(ru){
+	font-size: 13px;
 }
 #title:lang(ru){
 	font-family: pt_sansitalic, Arial, sans-serif;
